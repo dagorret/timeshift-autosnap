@@ -26,7 +26,7 @@ function get_property() {
 }
 
 if $(get_property "skipAutosnap" "boolean" "false") ; then
-    echo "==> skipping due skipAutosnap in $CONF_FILE set to TRUE." >&2; exit 0;
+    echo "==> skipping timeshift-autosnap due skipAutosnap in $CONF_FILE set to TRUE." >&2; exit 0;
 fi
 
 timeshift --create --comments "$SNAPSHOT_DESCRIPTION" || { echo "Please close Timeshift and try again. Script will now exit..." >&2; exit 1; }
