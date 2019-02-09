@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = *
+
+[Action]
+Description = Creating Timeshift snapshot before upgrade...
+Depends = timeshift
+When = PreTransaction
+Exec = /usr/bin/timeshift-autosnap
+AbortOnFail
