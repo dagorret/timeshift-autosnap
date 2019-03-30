@@ -48,7 +48,7 @@ if $(get_property "deleteSnapshots" "boolean" "true") ; then
 fi;
 
 if $(get_property "updateGrub" "boolean" "true") && [ "$(pacman -Qs ^grub-btrfs$)" ]; then
-    update-grub
+    grub-mkconfig -o /boot/grub/grub.cfg
 fi;
 
 exit 0
