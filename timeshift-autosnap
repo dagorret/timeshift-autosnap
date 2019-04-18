@@ -29,7 +29,7 @@ if $(get_property "skipAutosnap" "boolean" "false") ; then
     echo "==> skipping timeshift-autosnap due skipAutosnap in $CONF_FILE set to TRUE." >&2; exit 0;
 fi
 
-timeshift --create --comments "$SNAPSHOT_DESCRIPTION" || { echo "Please close Timeshift and try again. Script will now exit..." >&2; exit 1; }
+timeshift --create --comments "$SNAPSHOT_DESCRIPTION" || { echo "Unable to run timeshift-autosnap! Please close Timeshift and try again. Script will now exit..." >&2; exit 1; }
 
 if $(get_property "deleteSnapshots" "boolean" "true") ; then
     timeshift --list > $SNAPSHOTS_TO_DELETE
