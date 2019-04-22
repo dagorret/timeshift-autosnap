@@ -8,7 +8,7 @@ Timeshift auto-snapshot script which runs before package upgrade using Pacman ho
 *  Can be manually executed by running `timeshift-autosnap` command with elevated privileges.
 
 # /etc/timeshift-autosnap.conf options:
-*  `skipAutosnap` - if set to **true** script won't be executed.
+*  `skipAutosnap` - if set to **false** script won't be executed.
 *  `deleteSnapshots` - if set to **false** old snapshots won't be deleted.
 *  `maxSnapshots` - defines **maximum** number of old snapshots to keep.
 *  `updateGrub` - if set to **false** grub entries won't be generated.
