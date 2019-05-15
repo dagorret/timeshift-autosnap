@@ -1,6 +1,10 @@
 #!/bin/bash
 #author: gobonja
 
+if [ $(findmnt / -no fstype) == "overlay" ] ; then
+    echo "==> skipping timeshift-autosnap because system is booted in Live CD mode..."; exit 0;
+fi
+
 readonly CONF_FILE=/etc/timeshift-autosnap.conf
 readonly SNAPSHOTS_TO_DELETE=/tmp/timeshift-autosnap-tmp
 
