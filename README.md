@@ -6,7 +6,7 @@ Timeshift auto-snapshot script which runs before package upgrade using Pacman ho
 *  Deletes old snapshots which are created using this script.
 *  Auto generates grub if grub-btrfs package is installed.
 *  Can be manually executed by running `timeshift-autosnap` command with elevated privileges.
-*  Autosnaphot can be temporarily skipped by setting environment variable SKIP_AUTOSNAP (e.g. `sudo SKIP_AUTOSNAP= pacman -Syu`)
+*  Autosnaphot can be temporarily skipped by setting SKIP_AUTOSNAP environment variable (e.g. `sudo SKIP_AUTOSNAP= pacman -Syu`)
 
 # /etc/timeshift-autosnap.conf options:
 *  `skipAutosnap` - if set to **true** script won't be executed.
