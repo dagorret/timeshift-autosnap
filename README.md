@@ -13,6 +13,7 @@ Timeshift auto-snapshot script which runs before package upgrade using Pacman ho
 *  `deleteSnapshots` - if set to **false** old snapshots won't be deleted.
 *  `maxSnapshots` - defines **maximum** number of old snapshots to keep.
 *  `updateGrub` - if set to **false** grub entries won't be generated.
+*  `snapshotDescription` - defines **value** used to distinguish snapshots created using timeshift-autosnap.
 
 # Notes
 *  It' working both in `BTRFS` and `RSYNC` mode.
