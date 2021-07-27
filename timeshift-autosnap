@@ -1,8 +1,8 @@
 #!/bin/bash
 #author: gobonja
+#Modified by Matti Hyttinen
 
 [ $(findmnt / -no fstype) == "overlay" ] && { echo "==> skipping timeshift-autosnap because system is booted in Live CD mode..."; exit 0; }
-
 [[ -v SKIP_AUTOSNAP ]] && { echo "==> skipping timeshift-autosnap due SKIP_AUTOSNAP environment variable being set."; exit 0; }
 
 readonly CONF_FILE=/etc/timeshift-autosnap.conf
@@ -31,6 +31,10 @@ get_property() {
 
 if $(get_property "skipAutosnap" "boolean" "false") ; then
     echo "==> skipping timeshift-autosnap due skipAutosnap in $CONF_FILE set to TRUE." >&2; exit 0;
+fi
+
+if $(get_property "skipRsyncAutosnap" "boolean" "false") && ! [ $(findmnt / -no fstype) == "btrfs" ] ; then
+    echo "==> skipping timeshift-autosnap due skipRsyncAutosnap in $CONF_FILE set to TRUE." >&2; exit 0;
 fi
 
 readonly SNAPSHOT_DESCRIPTION=$(get_property "snapshotDescription" "string" "{timeshift-autosnap} {created before upgrade}")
