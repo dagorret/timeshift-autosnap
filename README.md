@@ -21,3 +21,5 @@ Timeshift auto-snapshot script which runs before package upgrade using Pacman ho
 
 # Contribution
 *  All new ideas and contributors are welcomed!
+
+This a clone of Matti Hyttinen solution: https://gitlab.manjaro.org/Chrysostomus/timeshift-autosnap
